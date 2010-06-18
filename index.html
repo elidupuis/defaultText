@@ -4,34 +4,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<script src="../jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>jquery.defaultText</title>
+	<style type="text/css" media="screen">
+		h2			{ margin: 1em 0 0.25em; }
+		input,
+		textarea 	{ padding: 5px; }
+		textarea 	{ height: 100px; width:200px; }
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="jquery.defaultText.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){
-			$('#searchbox').defaultText({
+		$(function(){
+			$('#example1').defaultText();
+			
+			$('#example2').defaultText({
 				text:'Enter search terms'
 			});
 			
-			$('#username').defaultText();
-			
-			$('#password').defaultText({
-				text:'override of html value',
+			$('#example3').defaultText({
+				text:'text from js',
 				clearOnFocus:true,
 				force:true
 			});
+			$('textarea').defaultText();
+			
 		});
 	</script>
-	<title>Default Input Text tests</title>
+
 	
 </head>
 
 <body>
-
-	<input id="searchbox" type="text" />
+	<h1>jquery.defaultText</h1>
 	
-	<input id="username" type="text" value="enter your username" />
+	<h2>simplest form</h2>
+	<input id="example1" type="text" value="enter search terms" />
 	
-	<input id="password" type="text" value="enter your password" />
+	<h2>specifying default text with plugin</h2>
+	<input id="example2" type="text" />
+	
+	<h2>forcing default text with plugin</h2>
+	<input id="example3" type="text" value="username here" />
+	
+	<h2>textarea</h2>
+	<textarea>this is the original html value</textarea>
 
 </body>
 </html>

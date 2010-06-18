@@ -1,0 +1,5 @@
+Options:
+
+text: 'Search'			//	default text to use. html value attribute will override this unless option force is set to true
+force: false			//	if true, option text will be used regardless of html value attribute
+clearOnFocus: false		//	if true, text will always be cleared on input focus. otherwise it's only cleared if it's the default text.
