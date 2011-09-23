@@ -1,32 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>jquery.defaultText</title>
+  <meta charset="utf-8">
+	<title>jquery.placeholder plugin</title>
 	<style type="text/css" media="screen">
 		h2			{ margin: 1em 0 0.25em; }
+		code    { display: block; margin:5px 0;}
 		input,
 		textarea 	{ padding: 5px; }
 		textarea 	{ height: 100px; width:200px; }
 	</style>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="jquery.defaultText.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.placeholder.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		$(function(){
-			$('#example1').defaultText();
+      $('input, textarea').placeholder();
 			
-			$('#example2').defaultText({
-				text:'Enter search terms'
-			});
-			
-			$('#example3').defaultText({
-				text:'text from js',
-				clearOnFocus:true,
-				force:true
-			});
-			$('textarea').defaultText();
+      // $('#example2').placeholder({
+      //  text:'Enter search terms'
+      // });
+      // 
+      // $('#example3').placeholder({
+      //  text:'text from js',
+      //  clearOnFocus:true,
+      //  force:true
+      // });
+      // $('textarea').placeholder(); 
 			
 		});
 	</script>
@@ -35,19 +35,33 @@
 </head>
 
 <body>
-	<h1>jquery.defaultText</h1>
+	<h1>jquery.placeholder</h1>
 	
-	<h2>simplest form</h2>
-	<input id="example1" type="text" value="enter search terms" />
+	<h2>placeholder attribute</h2>
+  <code>
+    &lt;input type="text" value="" placeholder="placeholder text" /&gt;
+  </code>
+	<input id="example1" type="text" value="" placeholder="placeholder text" />
+
+
+  <h2>placeholder &amp; value</h2>
+	<input id="example1" type="text" value="some value" placeholder="enter search terms" />
+
+	<h2>value only, empty placeholder</h2>
+	<input id="example1" type="text" value="enter search terms" placeholder="" />
 	
-	<h2>specifying default text with plugin</h2>
+	<h2>text from plugin option</h2>
 	<input id="example2" type="text" />
-	
-	<h2>forcing default text with plugin</h2>
-	<input id="example3" type="text" value="username here" />
 	
 	<h2>textarea</h2>
 	<textarea>this is the original html value</textarea>
+	
+	<h2>textarea with placeholder and content</h2>
+	<textarea placeholder="placeholder text here">this is the original html value</textarea>
+	
+	<h2>textarea with placeholder and no content</h2>
+	<textarea placeholder="placeholder text here"></textarea>
+	
 
 </body>
 </html>
