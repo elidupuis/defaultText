@@ -1,3 +1,7 @@
+OLD CRAPPY, UNMAINTAINED CODE. USE https://github.com/mathiasbynens/jquery-placeholder.
+
+--------------------
+
 Options:
 
 text: 'Search'			//	default text to use. html value attribute will override this unless option force is set to true
